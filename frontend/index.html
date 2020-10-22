@@ -16,17 +16,63 @@
   </style>
   <style>
     h1 {color:goldenrod;}
+
     #card-index {color:goldenrod}
     #create-character {color:goldenrod}
     .boxed {
     border: 1px solid goldenrod ;
     }
+
   </style>
     <script src="src/index.js" defer></script>
 </head>
 <body>
 
     <h1>Star Wars Index</h1>
+  <!-- nav bar -->
+    <div id="nav-container">
+      <style>
+        ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+          background-color: #111;
+          opacity: 0.8;
+        }
+        
+        li {
+          float: left;
+        }
+        
+        li a {
+          display: block;
+          color: goldenrod;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+        }
+        
+        li a:hover:not(.active) {
+          /* background-color: #111; */
+          background-color:#111;
+        }
+        
+        .active {
+          background-color: #333;
+        }
+        </style>
+        </head>
+        <body>
+          <div id="nav-bar">
+            <ul>
+              <li id="home"><a href="#home">Home</a></li>
+              <li id="characters"><a href="#news">Characters</a></li>
+              <li id="path"><a href="#contact">Choose Your Path</a></li>
+            </ul>
+          </div>
+  <!-- nav bar -->        
+    </div><br><br>
     <div id="create-character"></div>
       <div class="boxed">
         <center>
@@ -35,7 +81,7 @@
           </div>
         </div></center>
     </div>
-      
+    
   
 </body>
 </html>
