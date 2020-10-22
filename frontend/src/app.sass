@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Sansita+Swashed:wght@400;700&display=swap')
+$primary-color: #F38102
+$card-inner-padding: 15px
+$card-border-radius: 3px
+
+body
+  display: flex
+  justify-content: center
+  align-items: center
+  height: 100vh
+  background-color: #FAFAFA
+  box-sizing: border-box
+  font-family: 'Sansita Swashed', cursive
+  p
+    line-height: 1.2em
+  
+button
+  font-family: 'Sansita Swashed', cursive
+  letter-spacing: 0.02em
+  color: #fff
+  background-color: $primary-color
+  border: none
+  padding: .3em .6em
+  border-radius: $card-border-radius
+  cursor: pointer
+  outline: none
+  &:active
+    box-shadow: inset 0 0 4px lighten(black, 50%)
+  
+.card
+  width: 400px
+  padding: $card-inner-padding
+  padding-top: 0
+  border-radius: $card-border-radius
+  box-shadow: .5px .5px 6px black
+  position: relative
+  overflow: hidden
+ 
+  &__img
+    width: calc(100% + #{$card-inner-padding} * 2)
+    margin-left: $card-inner-padding * -1
+    margin-bottom: .3rem
+    border-radius: $card-border-radius $card-border-radius 0 0
+    object-fit: cover
+    cursor: pointer
+
+  &__subtitle
+    padding-left: .3em
+  &__title
+    font-size: 2rem
+    margin: 0
+      
+  &__content
+    position: absolute
+    left: 0
+    bottom: 0
+    font-family: 'Roboto', sans-serif
+    font-weight: 400
+    background-color: #fff
+    border-radius: 0 0 $card-border-radius $card-border-radius
+    padding: 0 $card-inner-padding $card-inner-padding $card-inner-padding
+    transform: translateY(100%)
+    transition: 600ms transform
+    
+  &__footer
+    display: flex
+    justify-content: flex-end
+    margin-top: 1.5rem
+
+  &:hover
+    .card__content
+      transform: translateY(0)
