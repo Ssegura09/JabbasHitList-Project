@@ -11,12 +11,18 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 <style>
   body {
-    background-image: url("https://starwarsblog.starwars.com/wp-content/uploads/2020/04/star-wars-backgrounds-25.jpg");
+    background-image: url("https://starwarsblog.starwars.com/wp-content/uploads/2020/04/star-wars-backgrounds-25.jpg")
   }
   </style>
   <style>
     h1 {color:goldenrod;}
-    #divcard {color:goldenrod}
+
+    #card-index {color:goldenrod}
+    #create-character {color:goldenrod}
+    .boxed {
+    border: 1px solid goldenrod ;
+    }
+
   </style>
     <script src="src/index.js" defer></script>
 </head>
@@ -68,8 +74,13 @@
   <!-- nav bar -->        
     </div><br><br>
     <div id="create-character"></div>
-    <div id="card-index"></div>
-      
+      <div class="boxed">
+        <center>
+        <div class="container">  
+          <div id="card-index">
+          </div>
+        </div></center>
+    </div>
     
   
 </body>
