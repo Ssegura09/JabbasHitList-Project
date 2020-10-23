@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Star Wars App</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="StyleSheet.css">
+    <!-- <link rel="stylesheet" href="StyleSheet.css"> -->
+
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
@@ -16,6 +17,7 @@
   </style>
   <style>
     h1 {color:goldenrod;}
+
     #card-index {color:goldenrod}
     #create-character {color:goldenrod}
     .boxed {
@@ -135,25 +137,31 @@
   height: 17em;
   left: 50%;
   position: center;
-  top: 50%;
+  top: 65%;
   transform: translate(-50%, -50%);
   width: 34em;
 }
+
 .byline span {
   display: inline-block;
 }
+
 img {
   width: 100%;
 }
+
 .star, .wars, .byline {
   position: absolute;
 }
+
 .star {
   top: -0.75em;
 }
+
 .wars {
   bottom: -0.5em;
 }
+
 .byline {
   color: #fff;
   font-family: "ITC Serif Gothic", Lato;
@@ -165,21 +173,26 @@ img {
   text-transform: uppercase;
   top: 40%;
 }
+
 /*** Media queries for adjusting to different screen sizes ***/
+
 @media only screen and (max-width: 600px) {
   .starwars-demo {
     font-size: 10px;
   }
 }
+
 @media only screen and (max-width: 480px) {
   .starwars-demo {
     font-size: 7px;
   }
 }
+
   </style>
     <script src="src/index.js" defer></script>
 </head>
 <body>
+
     <h1>Jabba The Huts Hit List</h1>
   <!-- nav bar -->
     <div id="nav-container">
@@ -192,9 +205,11 @@ img {
           background-color: #111;
           opacity: 0.8;
         }
+        
         li {
           float: left;
         }
+        
         li a {
           display: block;
           color: goldenrod;
@@ -202,10 +217,12 @@ img {
           padding: 14px 16px;
           text-decoration: none;
         }
+        
         li a:hover:not(.active) {
           /* background-color: #111; */
           background-color:#111;
         }
+        
         .active {
           background-color: #333;
         }
@@ -221,7 +238,6 @@ img {
           </div>
   <!-- nav bar -->        
     </div><br><br>
-    <div id="create-character"></div>
     <!-- <h1 id="main-header"></h1> -->
       <div class="boxed">
         <center>
@@ -230,30 +246,35 @@ img {
           </div>
         </div></center>
     </div>
-    <!-- <div class="fade"></div> -->
-        <!-- <section class="star-wars"> --> 
-          <style>
-            body class:"star-wars" {
-            /* Force the body to fill the entire screen */
-              width: 100%;
-              height: 100%;
-  /* Hide elements that flow outside the viewable space */
-              overflow: hidden;
-  /* Black background for the screen */
-              background: #000;
-}
-          </style>
-          <!-- <div class="crawl">
+
+    <div class="fade"></div> -->
+
+    <section class="star-wars">
+    <style>
+        body class:".star-wars" {
+              /* Force the body to fill the entire screen */
+                width: 100%;
+                height: 100%;
+    /* Hide elements that flow outside the viewable space */
+                overflow: hidden;
+    /* Black background for the screen */
+                background: #000;
+  }
+  </style>
+          <div class="crawl">
             <div class="title" id="title">
               <p>Episode IV</p>
               <h1>A New Hope</h1>
-            </div>
+            </div> -->
+            
             <p>It is a period of civil war. Rebel spaceships, striking from a hidden base, have won their first victory against the evil Galactic Empire.</p>
-              <p>During the battle, Rebel spies managed to steal secret plans to the Empire's ultimate weapon, the DEATH STAR, an armored space station with enough power to destroy an entire planet.</p>
-'            <p>Pursued by the Empire’s sinister agents, Princess Leia races home aboard her starship, custodian of the stolen plans that can save her people and restore freedom to the galaxy….</p>
+              
+              <p>During the battle, Rebel spies managed to steal secret plans to the Empire’s ultimate weapon, the DEATH STAR, an armored space station with enough power to destroy an entire planet.</p>
+
+            <p>Pursued by the Empire’s sinister agents, Princess Leia races home aboard her starship, custodian of the stolen plans that can save her people and restore freedom to the galaxy….</p>
           </div>
-        </section> -->
-      <!-- <div class="container-logo">
+        </section>
+      <div class="container-logo">
         <center>
         <div class="starwars-demo">
           <img src="images/star.svg" alt="Star" class="star">
@@ -262,15 +283,41 @@ img {
           <br>
           <br>
           <h2 class="byline" id="byline">Stephanie Payton</h2>
-          <img src="images/wars.svg" alt="Wars" class="wars"> -->
+          <img src="images/wars.svg" alt="Wars" class="wars"> 
+
           <style>
           .starwars-demo {
             perspective: 800px;
             transform-style: preserve3d;
           }
           </style>
-        <!-- </div>
+        </div>
+        
       </center>
-      </div>   -->
+      </div>  
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

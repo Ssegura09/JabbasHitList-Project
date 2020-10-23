@@ -6,14 +6,24 @@ document.addEventListener("DOMContentLoaded", () => {
     .then((res) => res.json())
     .then((characters) => {
       charArray = characters;
-      characters.forEach((character) => pathNav(character));
+      // characters.forEach((character) => pathNav(character));
     });
 
-  createFormData();
-  characterNav();
+  // createFormData();
+  // characterNav();
   homeNav();
-  // pathNav();
-  
+  path.addEventListener("click", (e) => {
+    pathNav();
+  })
+  const character = document.querySelector("#characters");
+      character.addEventListener("click", (e) => {
+        characterNav();
+      })
+      const home = document.querySelector("#home");
+      home.addEventListener("click", (e) => {
+        homeNav();
+      })
+}); //end of DOMContentLoaded  
   function renderCharacterCard(character) {
     // console.log("here")
     const cardIndex = document.querySelector("#card-index");
@@ -71,24 +81,28 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   } //last line of render card
   
-  function createFormData() {
-    const createCharDiv = document.querySelector("#create-character");
+  function createFormData(type) {
+    const cardIndex = document.querySelector("#card-index");
     const h3 = document.createElement("h3");
     h3.innerText = "Create Your Character: ";
     
     const br = document.createElement("br");
     
+    if(document.querySelector("#form")){
+      document.querySelector("#form").remove();
+    }
     const newCharacterForm = document.createElement("form");
+    newCharacterForm.id = "form"
     
     const name = document.createElement("input");
     name.type = "text";
     name.placeholder = "Name";
     name.id = "name";
     
-    const char_type = document.createElement("input");
-    char_type.type = "text";
-    char_type.placeholder = "Character Type";
-    char_type.id = "character";
+    // const char_type = document.createElement("input");
+    // char_type.type = "text";
+    // char_type.placeholder = "Character Type";
+    // char_type.id = "character";
     
     const species = document.createElement("input");
     species.type = "text";
@@ -112,7 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
       
       let name = document.querySelector("#name").value;
-      let char_type = document.querySelector("#character").value;
+      // let char_type = document.querySelector("#character").value;
       
       let species = document.querySelector("#species").value;
       // console.log(species)
@@ -123,7 +137,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // console.log(image)
       let newCharacter = {
         name: name,
-        char_type: char_type,
+        char_type: type,
         species: species,
         description: description,
         image: image,
@@ -143,48 +157,108 @@ document.addEventListener("DOMContentLoaded", () => {
       .then((res) => res.json())
       // .then((res) => console.log(res))
       // .then(text => console.log(text))
-      .then((character) => renderCharacterCard(character));
+      .then((character) => {
+        renderCharacterCard(character)
+        charArray.push(character)
+      })
       e.target.reset();
     });
     //append for form
     newCharacterForm.append(
+      h3,
       name,
-      char_type,
+      // char_type,
       species,
       description,
       image,
-      submitBtn
+      submitBtn,
+      br
       );
-      createCharDiv.append(h3, newCharacterForm, br);
+
+      cardIndex.append(newCharacterForm);
     } //last line of Form function
     
     function characterNav() {
-      const character = document.querySelector("#characters");
-      character.addEventListener("click", (e) => {
+      // const character = document.querySelector("#characters");
+      // character.addEventListener("click", (e) => {
         const cardIndex = document.querySelector("#card-index");
         // console.log(cardIndex)//grab card index and reset it
         cardIndex.innerHTML = "";
-        fetch(URLBase)
-        .then((res) => res.json())
-        .then((characters) =>
-        characters.forEach((character) => renderCharacterCard(character))
-        );
-        document.querySelector(".starwars-demo").style.display = "none"
-      });
+        // fetch(URLBase)
+        // .then((res) => res.json())
+        // .then((characters) =>
+        charArray.forEach((character) => renderCharacterCard(character))
+        
+        // document.querySelector(".starwars-demo").style.display = "none"
+      // });
     }
     
     function homeNav() {
-      const home = document.querySelector("#home");
-      home.addEventListener("click", (e) => {
+      
         const cardIndex = document.querySelector("#card-index");
-        // console.log(home)
         cardIndex.innerHTML = "";
-        const divHome = document.createElement("div");
-        const h1 = document.createElement("h1");
+        const fade = document.createElement("div")
+        fade.className = "fade"
+        const starwars = document.createElement('section')
+        starwars.className = "star-wars"
+        const crawl = document.createElement('div')
+        crawl.className = "crawl"
+        const title = document.createElement('div')
+        title.className = "title"
+        const p1 = document.createElement('p')
+        p1.innerText = "Episode IV"
+        const hope = document.createElement('h1')
+        hope.innerText = "A New Hope"
+        const p2 = document.createElement('p')
+        p2.innerText = "It is a period of civil war. Rebel spaceships, striking from a hidden base, have won their first victory against the evil Galactic Empire."
+        const p3 = document.createElement('p')
+        p3.innerText = "During the battle, Rebel spies managed to steal secret plans to the Empire’s ultimate weapon, the DEATH STAR, an armored space station with enough power to destroy an entire planet."
+        const p4 = document.createElement('p')
+        p4.innerText = "Pursued by the Empire’s sinister agents, Princess Leia races home aboard her starship, custodian of the stolen plans that can save her people and restore freedom to the galaxy…."
+        // p2.append(p3)
+        title.append(p1, hope)
+        crawl.append(title, p2, p3, p4)
+        starwars.append(crawl)
+        
+        
+        const cl = document.createElement('div')
+        cl.className = "container-logo"
+        const center = document.createElement('center')
+        const starWarsDemo = document.createElement('div')
+        starWarsDemo.className = "starwars-demo"
+        const img1 = document.createElement('img')
+        img1.src = "images/star.svg"
+        img1.className = "star"
+        const br1 = document.createElement('br')
+        const br2 = document.createElement('br')
+        const br3 = document.createElement('br')
+        const br4 = document.createElement('br') 
+        const br5 = document.createElement('br')
+        const br6 = document.createElement('br')
+        const br7 = document.createElement('br')
+        const br8 = document.createElement('br') 
+        const h2 = document.createElement('h2')
+        h2.className = "byline"
+        h2.id = "byline"
+        h2.innerText = "Stephanie Payton" 
+        const img2 = document.createElement('img')
+        img2.src = "images/wars.svg"
+        img2.className = "wars"
+        
+        starWarsDemo.append(img1, br1, br2, br3, br4, h2, img2)
+        center.append(starWarsDemo)
+        cl.append(center)
+        
+        
+        
+        
+          // console.log(home)
+          const divHome = document.createElement("div");
+          const h1 = document.createElement("h1");
         const byline = document.getElementById('byline');     // Find the H2
-        bylineText = byline.innerHTML;                                      // Get the content of the H2
+        bylineText = h2.innerText;                                      // Get the content of the H2
         bylineArr = bylineText.split('');                                   // Split content into array
-        byline.innerHTML = '';                                                      // Empty current content
+        h2.innerHTML = '';                                                      // Empty current content
         
         var span;                   // Create variables to create elements
         var letter;
@@ -193,31 +267,29 @@ document.addEventListener("DOMContentLoaded", () => {
           span = document.createElement("span");                    // Create a <span> element
           letter = document.createTextNode(bylineArr[i]);   // Create the letter
           if(bylineArr[i] == ' ') {                                             // If the letter is a space...
-            byline.appendChild(letter);                 // ...Add the space without a span
+            h2.appendChild(letter);                 // ...Add the space without a span
           } else {
-            span.appendChild(letter);                       // Add the letter to the span
-            byline.appendChild(span);                   // Add the span to the h2
+              span.appendChild(letter);                       // Add the letter to the span
+              h2.appendChild(span);                   // Add the span to the h2
+            }
           }
-          document.querySelector(".star-wars").style.display = "none" 
-          // document.querySelector(".boxed").style.display = "none"
-          document.querySelector("#create-character").style.display = "none"
+          
+          
+          
+          divHome.append(h1)
+      
+          cardIndex.append(br1, br2, br3, br4, br5, br6, br7, br8, divHome, cl, fade, starwars)
+          
+          // //append section
+          
         }
         
-        
-        
-        divHome.append(h1)
-        cardIndex.append(divHome)
-      })
-      //append section
-      
-    }
-    
-    function pathNav(character) {
-      const path = document.querySelector("#path");
-      path.addEventListener("click", (e) => {
-        const cardIndex = document.querySelector("#card-index");
+    function pathNav() {
+      const cardIndex = document.querySelector("#card-index");
+      cardIndex.innerHTML = "";
+      // const path = document.querySelector("#path");
+      // path.addEventListener("click", (e) => {
         // console.log(home)
-        cardIndex.innerHTML = "";
         const pathContainer = document.createElement("div");
         pathContainer.id = "pcontainer";
         // const br = document.createElement('br')
@@ -231,6 +303,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const br3 = document.createElement("br");
         // document.querySelector(".starwars-demo").style.display = "none"
         // document.querySelector(".star-wars").style.display = "none"
+        // document.querySelector('create-character').style.display = ""
         
         const pathBtn = document.createElement("button");
         pathBtn.innerText = "Choose Your Path";
@@ -244,26 +317,26 @@ document.addEventListener("DOMContentLoaded", () => {
             charTypeList.push(obj.char_type);
           });
           
-          const randomPaths =
+          const randomPath =
           charTypeList[Math.floor(Math.random() * charTypeList.length)];
-          
           const results = document.createElement("p");
           results.className = "path-results";
-          document.querySelector("#character").value = randomPaths;
+          // document.createElement("#character").value = randomPaths;
           
-          results.innerText = `Fulfill your destiny, you must! ${randomPaths} you are to become!`;
+          results.innerText = `Fulfill your destiny, you must! ${randomPath} you are to become!`;
           results.style.fontSize = "x-large";
           
-          const pathContainer = document.querySelector("#pcontainer");
+          // const pathContainer = document.querySelector("#pcontainer");
           const resultsDiv = document.createElement("div");
           resultsDiv.id = "results";
           resultsDiv.append(results);
           pathContainer.append(resultsDiv);
+          createFormData(randomPath);
         });
         //append section
         pathContainer.append(h1, br1, br2, pathBtn);
         cardIndex.append(pathContainer);
-      });
+      
     }
-    
-  }); //end of DOMContentLoaded
+  
+
