@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
   createFormData();
   characterNav();
   homeNav();
-  pathNav();
+  // pathNav();
 }); //end of DOMContentLoaded
 
 
@@ -166,7 +166,9 @@ function createFormData() {
           .then((characters) =>
           characters.forEach((character) => renderCharacterCard(character))
           );
+        document.querySelector(".star-wars").style.display = "none"
       })
+
   
   }
 
@@ -177,6 +179,7 @@ function createFormData() {
       // console.log(home)
       cardIndex.innerHTML = ""
       const divHome = document.createElement('div')
+      divHome.className = "divHome"
       const h1 = document.createElement('h1')
       h1.innerText = "Welcome!"
       h1.style = "color: goldenrod;"
@@ -186,7 +189,7 @@ function createFormData() {
     
       divHome.append(h1)
       cardIndex.append(divHome)
-      
+      document.querySelector(".star-wars").style.display = "block" 
     })
   
   }
