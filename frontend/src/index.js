@@ -87,6 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
     h3.innerText = "Create Your Character: ";
     
     const br = document.createElement("br");
+    const br2 = document.createElement("br");
     
     if(document.querySelector("#form")){
       document.querySelector("#form").remove();
@@ -172,7 +173,8 @@ document.addEventListener("DOMContentLoaded", () => {
       description,
       image,
       submitBtn,
-      br
+      br,
+      br2
       );
 
       cardIndex.append(newCharacterForm);
@@ -206,15 +208,15 @@ document.addEventListener("DOMContentLoaded", () => {
         const title = document.createElement('div')
         title.className = "title"
         const p1 = document.createElement('p')
-        p1.innerText = "Episode IV"
+        p1.innerText = "Episode Mod III"
         const hope = document.createElement('h1')
         hope.innerText = "A New Hope"
         const p2 = document.createElement('p')
-        p2.innerText = "It is a period of civil war. Rebel spaceships, striking from a hidden base, have won their first victory against the evil Galactic Empire."
+        p2.innerText = "Help us, Payton and Stephanie! You're our only hope! It is a period of civil war. Rebel spaceships, striking from a hidden base, have won their first victory against the evil Galactic Empire."
         const p3 = document.createElement('p')
-        p3.innerText = "During the battle, Rebel spies managed to steal secret plans to the Empire’s ultimate weapon, the DEATH STAR, an armored space station with enough power to destroy an entire planet."
+        p3.innerText = "During the battle, Rebel spies Payton and Stephanie, managed to steal secret plans to the Empire’s ultimate weapon, the DEATH STAR, an armored space station with enough power to destroy an entire planet."
         const p4 = document.createElement('p')
-        p4.innerText = "Pursued by the Empire’s sinister agents, Princess Leia races home aboard her starship, custodian of the stolen plans that can save her people and restore freedom to the galaxy…."
+        p4.innerText = "Pursued by the Empire’s sinister agents and the notorious gangster Jabba the Hut, our heros races to the rebel base aboard their starship, custodian of the stolen plans that can save the people and restore freedom to the galaxy…."
         // p2.append(p3)
         title.append(p1, hope)
         crawl.append(title, p2, p3, p4)
