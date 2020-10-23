@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
   createFormData();
   characterNav();
   homeNav();
-  pathNav();
+  // pathNav();
 }); //end of DOMContentLoaded
 
 function renderCharacterCard(character) {
@@ -241,3 +241,4 @@ function pathNav(character) {
     cardIndex.append(pathContainer);
   });
 }
+
