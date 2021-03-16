@@ -329,16 +329,15 @@ function pathNav() {
       charTypeList.push(obj.char_type);
     });
 
+    // the goal was to have a random character from the DB populate the form, everytime the "Choose Your Path" button was clicked
     const randomPath =
       charTypeList[Math.floor(Math.random() * charTypeList.length)];
     const results = document.createElement('p');
     results.className = 'path-results';
-    // document.createElement("#character").value = randomPaths;
 
     results.innerText = `Fulfill your destiny, you must! ${randomPath} you are to become!`;
     results.style.fontSize = 'x-large';
 
-    // const pathContainer = document.querySelector("#pcontainer");
     const resultsDiv = document.createElement('div');
     resultsDiv.id = 'results';
     resultsDiv.append(results);
