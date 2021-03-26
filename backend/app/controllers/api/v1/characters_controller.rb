@@ -7,9 +7,9 @@ class Api::V1::CharactersController < ApplicationController
             render json: characters, only: [:name, :char_type, :species, :description, :image]
     end
 
-    # def new
-    #     character = Character.new
-    # end
+    def new
+        character = Character.new
+    end
 
     def show
         character = Character.find(params[:id])
